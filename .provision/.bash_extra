@@ -1,0 +1,4 @@
+cd article-laravel-homestead-dev-environment
+
+export PHP_IDE_CONFIG="serverName=www.homestead-article.dev" \
+    XDEBUG_CONFIG="idekey=phpstorm remote_host=192.168.10.1"

@@ -1,0 +1,38 @@
+---
+ip: "192.168.10.203"
+memory: 512
+cpus: 1
+hostname: homestead-article
+name: homestead-article
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: "" # directory of the project on host machine, `pwd` command in bash
+      to: "/home/vagrant/article-laravel-homestead-dev-environment"
+      type: nfs
+
+sites:
+    - map: www.homestead-article.dev
+      to: "/home/vagrant/article-laravel-homestead-dev-environment/web"
+      type: symfony
+
+databases:
+    - homestead
+
+# blackfire:
+#     - id: foo
+#       token: bar
+#       client-id: foo
+#       client-token: bar
+
+# ports:
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp
